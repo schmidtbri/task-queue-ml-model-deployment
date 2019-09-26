@@ -1,3 +1,4 @@
 git+https://github.com/schmidtbri/ml-model-abc-improvements#egg=iris_model
 celery==4.3.0
 librabbitmq==2.0.0
+redis==3.3.8

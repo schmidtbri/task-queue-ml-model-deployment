@@ -18,7 +18,7 @@ build: ## build a deployment package with all dependencies
 clean-build:  ## clean build artifacts
 	rm -rf build
 	rm -rf dist
-	rm -rf model_etl.egg-info
+	rm -rf model_task_queue.egg-info
 
 deployment-package:  ## makes a deployment package with all dependencies
 	# installing all dependencies to the vendors directory
@@ -27,7 +27,7 @@ deployment-package:  ## makes a deployment package with all dependencies
 	python setup.py sdist --create_deployment_package
 	rm -rf vendors
 	rm -rf build
-	rm -rf model_etl.egg-info
+	rm -rf model_task_queue.egg-info
 
 venv: ## create virtual environment
 	python3 -m venv venv
@@ -49,17 +49,17 @@ test: clean-pyc ## Run unit test suite.
 
 test-reports: clean-pyc ## Run unit test suite with reporting
 	mkdir -p reports
-	python -m coverage run --source model_etl -m pytest --verbose --color=yes --junitxml=./reports/unit_tests.xml $(TEST_PATH)
+	python -m coverage run --source model_task_queue -m pytest --verbose --color=yes --junitxml=./reports/unit_tests.xml $(TEST_PATH)
 	coverage xml -o ./reports/coverage.xml
 	rm -rf .coverage
 
 clean-test:	## Remove test artifacts
 	rm -rf .pytest_cache
 	rm -rf .coverage
+	rm -rf reports
 
 check-codestyle:  ## checks the style of the code against PEP8
-	pycodestyle model_etl --max-line-length=120
+	pycodestyle model_task_queue --max-line-length=120
 
 check-docstyle:  ## checks the style of the docstrings against PEP257
-	pydocstyle model_etl
-
+	pydocstyle model_task_queue
