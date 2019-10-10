@@ -19,10 +19,10 @@ class MLModelPredictionTask(Task):
         if issubclass(model_class, MLModel) is False:
             raise ValueError("MLModelPredictionTask can only be used with subtypes of MLModel.")
 
-        # saving the reference to the class to avoid having to import it again
+        # saving a reference to the class to avoid having to import it again
         self._model_class = model_class
 
-        # adding a name to the task object
+        # dynamically adding a name to the task object
         self.name = "{}.{}".format(__name__, model_class.qualified_name)
 
     def initialize(self):

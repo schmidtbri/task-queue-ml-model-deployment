@@ -12,7 +12,7 @@ clean-pyc: ## Remove python artifacts.
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 
-build: ## build a deployment package with all dependencies
+build: ## build a package
 	python setup.py sdist bdist_wheel
 
 clean-build:  ## clean build artifacts
