@@ -1,4 +1,6 @@
 """A task queue for machine learning model deployment."""
+# this is imported here so that the python path is set correctly before importing Celery when executing outside of a virtual environment
+import model_task_queue
 import os
 from celery import Celery
 from celery.app.registry import TaskRegistry

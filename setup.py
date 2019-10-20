@@ -26,7 +26,7 @@ if "--create_deployment_package" in sys.argv:
             extra_files.append(os.path.join('..', path, filename))
 
     # removing files with .pyc, .pyo. and __pycache__ in their path
-    extra_files = [s for s in extra_files if ".pyc" not in s and ".pyo" and "__pycache__" not in s]
+    extra_files = [s for s in extra_files if ".pyc" not in s and ".pyo" not in s and "__pycache__" not in s]
 
     # creating a parameter to send to setup function
     package_data = {'': extra_files}
