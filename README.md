@@ -37,13 +37,17 @@ make test-dependencies
 make test
 ```
 
-## Commands to install packages to compile librabbitmq
-
-From [here](https://github.com/celery/librabbitmq/issues/123).
-
+## Making a Deployment Package
+To create a tarball deployment package for the worker nodes, use this command:
 ```bash
-brew install autoconf
-brew install automake
-brew install pkg-config
-brew install libtool
+make deployment-package
+```
+
+### Starting a Worker Process
+To start a worker process execute these commands:
+```bash
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export APP_SETTINGS=ProdConfig
+export PYTHONPATH=./
+python3 -m model_task_queue --loglevel INFO
 ```
