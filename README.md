@@ -1,7 +1,7 @@
 # Task Queue ML Model Deployment
 Code to deploy an ML model as a task in a task queue.
 
-This code is used in this [blog post]().
+This code is used in this [blog post](https://towardsdatascience.com/a-task-queue-ml-model-deployment-552d2ceb38a5).
 
 ## Installation 
 The makefile included with this project contains targets that help to automate several tasks.
