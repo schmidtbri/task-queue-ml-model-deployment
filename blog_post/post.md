@@ -6,11 +6,11 @@ Authors: Brian Schmidt
 Summary: When building software, we may come across situations in which we want to execute a long-running operation behind the scenes while keeping the main execution path of the code running. This is useful when the software needs to remain responsive to a user, and the long running operation would get in the way. These types of operations often involve contacting another service over the network or writing data to IO. For example, when a web service needs to send an email, often the best way to do it is to launch a task in the background that will actually send the email, and return a response to the client immediately.
 
 This blog post builds on the ideas started in
-[three](https://towardsdatascience.com/a-simple-ml-model-base-class-ab40e2febf13)
-[previous](https://towardsdatascience.com/improving-the-mlmodel-base-class-eded137629bd)
-[blog posts](https://towardsdatascience.com/using-the-ml-model-base-class-7b984edf47c5).
+[three]({filename}/articles/a-simple-ml-model-base-class/post.md)
+[previous]({filename}/articles/improving-the-mlmodel-base-class/post.md)
+[blog posts]({filename}/articles/using-ml-model-abc/post.md).
 
-The code in this blog post can be found in this [github repo](https://github.com/schmidtbri/etl-job-ml-model-deployment).
+The code in this blog post can be found in this [github repo](https://github.com/schmidtbri/task-queue-ml-model-deployment).
 
 # Introduction
 
@@ -231,9 +231,9 @@ prediction with it. The run() method is the one that defines the actual
 functionality of the Celery task.
 
 In
-[previous](https://towardsdatascience.com/using-the-ml-model-base-class-7b984edf47c5)
+[previous]({filename}/articles/using-ml-model-abc/post.md)
 [blog
-posts](https://towardsdatascience.com/a-batch-job-ml-model-deployment-da41b8ea5a99),
+posts]({filename}/articles/etl-job-ml-model-deployment/post.md),
 the instantiation of the model class happens in the \_\_init\_\_()
 method of the class that is managing the model object. After this, we
 can use the model class to make a prediction. We have to take a
@@ -260,9 +260,9 @@ instantiated tasks:
 First, we will install a machine learning model that will be hosted by
 the Celery application. For this we'll use the iris\_model package that
 I've already shown in
-[previous](https://towardsdatascience.com/a-batch-job-ml-model-deployment-da41b8ea5a99)
+[previous]({filename}/articles/etl-job-ml-model-deployment/post.md)
 [blog
-posts](https://towardsdatascience.com/using-the-ml-model-base-class-7b984edf47c5).:
+posts]({filename}/articles/using-ml-model-abc/post.md):
 
 ```bash
 pip install git+https://github.com/schmidtbri/ml-model-abc-improvements#egg=iris_model
@@ -540,9 +540,9 @@ being affected.
 
 The ML model deployment strategy I showed in this blog post works in the
 same way as the
-[previous](https://towardsdatascience.com/using-the-ml-model-base-class-7b984edf47c5)
+[previous]({filename}/articles/using-ml-model-abc/post.md)
 [blog
-posts](https://towardsdatascience.com/a-batch-job-ml-model-deployment-da41b8ea5a99)
+posts]({filename}/articles/etl-job-ml-model-deployment/post.md)
 I've published. The Celery application I built does not work with only
 one ML model, it works with any ML model that uses the MLModel base
 class. The application is also able to host any number of models, and
@@ -552,7 +552,7 @@ good software engineering design practices, we are able to easily put
 machine learning models into production without having to worry about
 the implementation details of the models. All of these capabilities stem
 from the design of the [MLModel base
-class](https://towardsdatascience.com/a-simple-ml-model-base-class-ab40e2febf13).
+class]({filename}/articles/a-simple-ml-model-base-class/post.md).
 
 Another interesting feature of the Celery package is that we can launch
 tasks from a variety of different languages. There are client libraries
