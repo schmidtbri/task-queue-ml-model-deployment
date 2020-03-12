@@ -59,11 +59,6 @@ as a result; in this case it would be useful to launch an asynchronous
 task that will take care of the predictions behind the scenes and then
 come back later to access the results.
 
-Another reason to offload the prediction to a worker node in a task
-queue is because loading and deserializing a model can take some time.
-When instantiating an MLModel class, the initialization can take some
-time, so to avoid having to do this..
-
 # Task Queueing With Celery
 
 Celery is a python package that handles most of the complexity of
