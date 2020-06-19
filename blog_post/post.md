@@ -437,7 +437,7 @@ True
 We use the task.delay() method to call the task asynchronously, getting
 back a result object that can be used to get a result once the task is
 completed. The ready() method of the result can be used to check on the
-task using the ready() method. Once it is completed, the result can be
+status of the result of the task. Once it is completed, the result can be
 retrieved from the result backend with the get() method.
 
 If the task throws an exception, the result will also throw an exception
